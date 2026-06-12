@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato & Agendamento | Eletrix – Ponta Grossa, PR</title>
+  <meta name="description" content="Entre em contato com a Eletrix. Agende uma visita ou peça um orçamento gratuito. WhatsApp: (42) 98863-5829." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <!-- ══ NAV ══ -->
+  <nav id="navbar">
+    <a href="../index.html" class="nav-logo">
+      <img src="../img/logo.jpg" alt="Eletrix Serviços" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Início</a></li>
+      <li><a href="servicos.html">Serviços</a></li>
+      <li><a href="../index.html#porque">Por que nós</a></li>
+      <li><a href="contato.html" style="color:var(--spark)">Contato</a></li>
+    </ul>
+    <a href="https://wa.me/5542988635829" class="nav-cta" target="_blank">💬 WhatsApp</a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="../index.html">Início</a>
+    <a href="servicos.html">Serviços</a>
+    <a href="../index.html#porque">Por que nós</a>
+    <a href="contato.html">Contato</a>
+    <a href="https://wa.me/5542988635829" class="nav-cta" target="_blank">💬 WhatsApp</a>
+  </div>
+
+  <!-- ══ PAGE HERO ══ -->
+  <div class="page-hero reveal">
+    <span class="section-eyebrow">Fale conosco</span>
+    <h1>Contato &amp; <em style="color:var(--spark)">Agendamento</em></h1>
+    <p>Preencha o formulário ou nos chame diretamente pelo WhatsApp. Respondemos em até 2 horas!</p>
+  </div>
+
+  <!-- ══ CONTATO GRID ══ -->
+  <section class="section section--alt">
+    <div class="max-w">
+      <div class="contact-grid">
+
+        <!-- INFO LATERAL -->
+        <div>
+          <div class="reveal">
+            <span class="section-eyebrow">Informações</span>
+            <h2 class="section-title">Como nos<br>encontrar</h2>
+            <p class="section-sub">Estamos disponíveis de segunda a sexta das 7h às 18h e sábados das 7h às 12h.</p>
+          </div>
+          <div class="contact-info-list">
+            <div class="contact-info-item reveal">
+              <span class="ci-icon">📱</span>
+              <div class="ci-text">
+                <strong>WhatsApp / Telefone</strong>
+                <a href="https://wa.me/5542988635829" target="_blank">(42) 98863-5829</a>
+              </div>
+            </div>
+            <div class="contact-info-item reveal">
+              <span class="ci-icon">📍</span>
+              <div class="ci-text">
+                <strong>Sede</strong>
+                Ponta Grossa – PR · Atendemos toda a região dos Campos Gerais
+              </div>
+            </div>
+            <div class="contact-info-item reveal">
+              <span class="ci-icon">⏰</span>
+              <div class="ci-text">
+                <strong>Horário de atendimento</strong>
+                Segunda a Sexta: 7h – 18h<br>Sábado: 7h – 12h
+              </div>
+            </div>
+            <div class="contact-info-item reveal">
+              <span class="ci-icon">⚡</span>
+              <div class="ci-text">
+                <strong>Urgências elétricas</strong>
+                Atendemos emergências — entre em contato pelo WhatsApp
+              </div>
+            </div>
+          </div>
+
+          <!-- WhatsApp direto grande -->
+          <a href="https://wa.me/5542988635829?text=Olá%2C+vim+pelo+site+da+Eletrix+e+gostaria+de+um+orçamento!"
+             class="btn-whatsapp reveal" style="margin-top:2rem;justify-content:center;font-size:1.1rem;padding:1rem 2rem;" target="_blank">
+            💬 Chamar no WhatsApp agora
+          </a>
+
+          <!-- Mapa placeholder -->
+          <div class="reveal" style="margin-top:2rem;">
+            <div style="background:var(--card);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.06);">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115938.4509085959!2d-50.22033!3d-25.09476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e8ab40a8640e25%3A0x6c54d29d7f6c5b4c!2sPonta%20Grossa%2C%20PR!5e0!3m2!1spt-BR!2sbr!4v1700000000000"
+                width="100%" height="220" style="border:0;display:block;" allowfullscreen loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" title="Eletrix – Ponta Grossa, PR">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORMULÁRIO -->
+        <div class="form-box reveal">
+          <h3>Solicitar orçamento gratuito</h3>
+
+          <div id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nome">Nome completo *</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="telefone">WhatsApp / Telefone *</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="(42) 98863-5829" autocomplete="tel" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mail (opcional)</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" autocomplete="email" />
+            </div>
+
+            <div class="form-group">
+              <label for="servico">Tipo de serviço *</label>
+              <select id="servico" name="servico">
+                <option value="">Selecione o serviço</option>
+                <option value="instalacao">Instalações Elétricas</option>
+                <option value="quadro">Quadros Elétricos</option>
+                <option value="chuveiro">Chuveiros e Torneiras</option>
+                <option value="arcondicionado">Ar-Condicionado e Ventilação</option>
+                <option value="iluminacao">Iluminação em Geral</option>
+                <option value="manutencao">Manutenção Elétrica</option>
+                <option value="cftv">CFTV / Câmeras de Segurança</option>
+                <option value="projeto">Projeto / Laudo Elétrico</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="data">Data preferida</label>
+                <input type="date" id="data" name="data" />
+              </div>
+              <div class="form-group">
+                <label for="horario">Período preferido</label>
+                <select id="horario" name="horario">
+                  <option value="">Selecione</option>
+                  <option value="manha">Manhã (7h – 12h)</option>
+                  <option value="tarde">Tarde (12h – 18h)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="mensagem">Descreva o serviço</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Conte um pouco mais sobre o que precisa..."></textarea>
+            </div>
+
+            <button class="btn-submit" id="submit-btn" type="button">
+              ⚡ Enviar solicitação
+            </button>
+
+            <a href="https://wa.me/5542988635829?text=Olá%2C+vim+pelo+site+da+Eletrix+e+gostaria+de+um+orçamento!"
+               class="form-whatsapp" target="_blank">
+              💬 Ou chame direto no WhatsApp
+            </a>
+          </div>
+
+          <!-- Sucesso -->
+          <div class="form-success" id="form-success">
+            <div class="form-success-icon">✅</div>
+            <h4>Solicitação enviada!</h4>
+            <p>Entraremos em contato em breve pelo telefone ou WhatsApp informado.<br>Obrigado pela confiança!</p>
+            <a href="../index.html" class="btn-primary" style="margin-top:1.5rem;display:inline-flex;justify-content:center;">
+              Voltar ao início
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="max-w">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">
+            <img src="../img/logo.jpg" alt="Eletrix Serviços" />
+          </div>
+          <p class="footer-desc">Serviços elétricos residenciais e comerciais em Ponta Grossa e região.</p>
+          <p class="footer-slogan">⚡ Energia que conecta, soluções que transformam!</p>
+        </div>
+        <div>
+          <div class="footer-heading">Serviços</div>
+          <ul class="footer-links">
+            <li><a href="servicos.html">Instalações Elétricas</a></li>
+            <li><a href="servicos.html">Quadros Elétricos</a></li>
+            <li><a href="servicos.html">Ar-Condicionado</a></li>
+            <li><a href="servicos.html">Iluminação em Geral</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Contato</div>
+          <ul class="footer-links">
+            <li><a href="tel:+5542988635829">(42) 98863-5829</a></li>
+            <li><a href="https://wa.me/5542988635829" target="_blank">WhatsApp</a></li>
+            <li>Ponta Grossa – PR</li>
+            <li>Seg–Sex: 7h–18h · Sáb: 7h–12h</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Eletrix Serviços. Todos os direitos reservados.</span>
+        <span>Ponta Grossa – PR · <a href="tel:+5542988635829">(42) 98863-5829</a></span>
+        <a href="https://www.instagram.com/eletrixservicos" target="_blank" style="display:inline-flex;align-items:center;gap:.4rem;color:var(--spark);">
+          📸 @eletrixservicos
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
