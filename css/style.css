@@ -235,6 +235,56 @@ h1.hero-title em { color: var(--spark); font-style: normal; }
   filter: drop-shadow(0 0 40px rgba(255,215,0,.3));
 }
 
+/* ── CARROSSEL ── */
+.carousel-section { padding-top: 0; padding-bottom: 60px; }
+.carousel {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  aspect-ratio: 2 / 1;
+}
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform .5s ease;
+}
+.carousel-slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+.carousel-slide img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: left center;
+}
+.carousel-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 42px; height: 42px; border-radius: 50%;
+  background: rgba(8,14,26,.55); border: 1px solid rgba(255,255,255,.2);
+  color: var(--white); font-size: 1rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s, border-color .2s;
+  z-index: 2;
+}
+.carousel-btn:hover { background: rgba(255,215,0,.85); color: var(--navy); border-color: var(--spark); }
+.carousel-prev { left: 16px; }
+.carousel-next { right: 16px; }
+.carousel-dots {
+  position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: .5rem; z-index: 2;
+}
+.carousel-dots .dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: rgba(255,255,255,.4); border: none; padding: 0; cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+.carousel-dots .dot.active { background: var(--spark); transform: scale(1.2); }
+@media (max-width: 640px) {
+  .carousel { aspect-ratio: 16 / 10; border-radius: 10px; }
+  .carousel-btn { width: 34px; height: 34px; font-size: .85rem; }
+}
+
 /* ── SERVIÇOS (index preview) ── */
 .services-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -299,35 +349,6 @@ h1.hero-title em { color: var(--spark); font-style: normal; }
 .cred-row-icon { font-size: 1.3rem; flex-shrink: 0; }
 .cred-row-text { font-size: .86rem; color: var(--muted); }
 .cred-row-text strong { color: var(--white); display: block; font-size: .92rem; }
-
-/* ── DEPOIMENTOS ── */
-.reviews-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 1.4rem;
-}
-.review-card {
-  background: var(--card); border-radius: var(--radius);
-  padding: 1.8rem; border: 1px solid rgba(255,255,255,.05);
-  display: flex; flex-direction: column; gap: .9rem;
-  transition: transform .2s;
-}
-.review-card:hover { transform: translateY(-4px); }
-.stars { color: var(--spark); font-size: .95rem; letter-spacing: .1em; }
-.review-text {
-  font-size: .92rem; color: var(--light); line-height: 1.7;
-  font-style: italic;
-}
-.reviewer { display: flex; align-items: center; gap: .75rem; margin-top: auto; }
-.reviewer-avatar {
-  width: 40px; height: 40px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--spark), var(--spark2));
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900; font-size: 1.05rem; color: var(--navy);
-  flex-shrink: 0;
-}
-.reviewer-name { font-weight: 600; font-size: .88rem; color: var(--white); }
-.reviewer-loc  { font-size: .76rem; color: var(--muted); }
 
 /* ── CTA BANNER ── */
 .cta-banner {

@@ -87,11 +87,62 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ── 6. ANO AUTOMÁTICO NO FOOTER ───────────
+  // ── 6. CARROSSEL ───────────────────────────
+  const track = document.getElementById('carousel-track');
+  if (track) {
+    const slides   = Array.from(track.children);
+    const dotsWrap = document.getElementById('carousel-dots');
+    const prevBtn  = document.getElementById('carousel-prev');
+    const nextBtn  = document.getElementById('carousel-next');
+    const carousel = document.getElementById('carousel');
+    let current    = 0;
+    let autoplay;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.classList.add('dot');
+      dot.setAttribute('aria-label', `Ir para slide ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function update() {
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+    function goTo(i) {
+      current = (i + slides.length) % slides.length;
+      update();
+    }
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function startAutoplay() { autoplay = setInterval(next, 5000); }
+    function stopAutoplay()  { clearInterval(autoplay); }
+
+    nextBtn.addEventListener('click', () => { next(); stopAutoplay(); startAutoplay(); });
+    prevBtn.addEventListener('click', () => { prev(); stopAutoplay(); startAutoplay(); });
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+
+    // swipe (touch)
+    let touchStartX = 0;
+    carousel.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    carousel.addEventListener('touchend', e => {
+      const diff = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(diff) > 40) { diff < 0 ? next() : prev(); stopAutoplay(); startAutoplay(); }
+    }, { passive: true });
+
+    update();
+    startAutoplay();
+  }
+
+  // ── 7. ANO AUTOMÁTICO NO FOOTER ───────────
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ── 7. DESTAQUE DO LINK DE NAV ATIVO ───────
+  // ── 8. DESTAQUE DO LINK DE NAV ATIVO ───────
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
     const href = link.getAttribute('href');
