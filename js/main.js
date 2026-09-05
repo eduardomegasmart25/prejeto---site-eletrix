@@ -12,7 +12,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── 2. HAMBURGER / MOBILE MENU ─────────────
+  // ── 2. BARRA DE PROGRESSO DE SCROLL ────────
+  const progressBar = document.createElement('div');
+  progressBar.id = 'scroll-progress';
+  document.body.appendChild(progressBar);
+  let ticking = false;
+  function updateProgress() {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    progressBar.style.width = pct + '%';
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateProgress);
+      ticking = true;
+    }
+  });
+  updateProgress();
+
+  // ── 3. HAMBURGER / MOBILE MENU ─────────────
   const hamburger  = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
   if (hamburger && mobileMenu) {
@@ -29,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── 3. SCROLL REVEAL ───────────────────────
+  // ── 4. SCROLL REVEAL ───────────────────────
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -41,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // ── 4. CONTADOR ANIMADO ────────────────────
+  // ── 5. CONTADOR ANIMADO ────────────────────
   function animateCounter(el, target, suffix = '+') {
     const duration = 1800;
     let startTime = null;
@@ -70,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     statsObserver.observe(statsSection);
   }
 
-  // ── 5. PARTÍCULAS HERO ─────────────────────
+  // ── 6. PARTÍCULAS HERO ─────────────────────
   const particlesEl = document.getElementById('particles');
   if (particlesEl) {
     for (let i = 0; i < 20; i++) {
@@ -87,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ── 6. CARROSSEL ───────────────────────────
+  // ── 7. CARROSSEL ───────────────────────────
   const track = document.getElementById('carousel-track');
   if (track) {
     const slides   = Array.from(track.children);
@@ -138,11 +157,11 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoplay();
   }
 
-  // ── 7. ANO AUTOMÁTICO NO FOOTER ───────────
+  // ── 8. ANO AUTOMÁTICO NO FOOTER ───────────
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ── 8. DESTAQUE DO LINK DE NAV ATIVO ───────
+  // ── 9. DESTAQUE DO LINK DE NAV ATIVO ───────
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
     const href = link.getAttribute('href');
