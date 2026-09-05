@@ -1,0 +1,11 @@
+# Eletrix Serviços
+
+> Empresa de serviços elétricos residenciais e comerciais em Ponta Grossa, PR (Brasil): instalações elétricas, quadros elétricos, chuveiros e torneiras, ar-condicionado e ventilação, iluminação, manutenção elétrica, CFTV e projetos/laudos elétricos.
+
+Atendimento: (42) 98439-8253 (WhatsApp). Atua em Ponta Grossa e na região dos Campos Gerais, com mais de 10 anos de experiência e mais de 500 projetos entregues. Horário: segunda a sexta das 7h às 18h, sábado das 7h às 12h.
+
+## Páginas
+
+- [Início](https://prejeto-site-eletrix.vercel.app/): Apresentação da empresa, prévia dos serviços, diferenciais e depoimentos de clientes.
+- [Serviços](https://prejeto-site-eletrix.vercel.app/pages/servicos.html): Lista completa dos serviços elétricos oferecidos.
+- [Contato](https://prejeto-site-eletrix.vercel.app/pages/contato.html): Informações de contato, horário de atendimento, WhatsApp direto e localização.

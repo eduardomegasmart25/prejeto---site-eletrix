@@ -87,47 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ── 6. FORMULÁRIO DE CONTATO ───────────────
-  const submitBtn = document.getElementById('submit-btn');
-  if (submitBtn) {
-    submitBtn.addEventListener('click', () => {
-      const nome     = document.getElementById('nome')?.value.trim();
-      const telefone = document.getElementById('telefone')?.value.trim();
-      const servico  = document.getElementById('servico')?.value;
-
-      if (!nome || !telefone || !servico) {
-        showFormError('Por favor, preencha nome, telefone e tipo de serviço.');
-        return;
-      }
-
-      // Simula envio (aqui você pode integrar com e-mail / backend real)
-      submitBtn.disabled    = true;
-      submitBtn.textContent = 'Enviando…';
-
-      setTimeout(() => {
-        document.getElementById('contact-form').style.display  = 'none';
-        document.getElementById('form-success').style.display  = 'block';
-      }, 1200);
-    });
-  }
-
-  function showFormError(msg) {
-    let err = document.getElementById('form-error');
-    if (!err) {
-      err = document.createElement('p');
-      err.id = 'form-error';
-      err.style.cssText = 'color:#ff6b6b;font-size:.87rem;margin-top:.5rem;text-align:center;';
-      document.getElementById('submit-btn')?.insertAdjacentElement('afterend', err);
-    }
-    err.textContent = msg;
-    setTimeout(() => { err.textContent = ''; }, 4000);
-  }
-
-  // ── 7. ANO AUTOMÁTICO NO FOOTER ───────────
+  // ── 6. ANO AUTOMÁTICO NO FOOTER ───────────
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ── 8. DESTAQUE DO LINK DE NAV ATIVO ───────
+  // ── 7. DESTAQUE DO LINK DE NAV ATIVO ───────
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
     const href = link.getAttribute('href');

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prejeto-site-eletrix.vercel.app/sitemap.xml
